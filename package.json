@@ -9,7 +9,6 @@
   "dependencies": {
     "@truffle/hdwallet-provider": "^2.1.4",
     "dotenv": "^16.0.3",
-    "ganache": "^7.7.2",
     "truffle": "^5.7.1",
     "web3": "^1.8.1"
   },
@@ -18,7 +17,11 @@
     "compile": "truffle compile",
     "build": "truffle build",
     "deploy": "truffle migrate --network ethecc --reset",
-    "testDeploy": "truffle migrate --network development --reset",
+    "pretestDeploy": "ganache --detach",
+    "testDeploy": "truffle migrate --network ganache",
     "evaluate": "node index.js"
+  },
+  "devDependencies": {
+    "ganache": "^7.7.3"
   }
 }
